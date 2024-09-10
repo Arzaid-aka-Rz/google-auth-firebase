@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { auth, googleProvider } from "@/utils/firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
@@ -9,8 +9,8 @@ export const Auth = () => {
 
   const signInWithGoogle = async () => {
     try {
-      const response = await signInWithPopup(auth, googleProvider);
-      const username = response.user.email;
+      await signInWithPopup(auth, googleProvider);
+    //   const username = response.user.email;
 
       // Ensure db is defined or imported properly for Firestore usage
       // const ref = await db.collection('usernames').doc(username).set({
